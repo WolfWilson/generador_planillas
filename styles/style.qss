@@ -1,0 +1,221 @@
+/* ===========================================================
+   WolfSight – QSS Moderno (Light) Qt5/Qt6 safe
+   =========================================================== */
+
+* { outline: none; }
+
+
+QWidget {
+    background-color: #F7F8FA;        /* fondo app */
+    color: #1E293B;                   /* texto principal */
+    font-family: "Segoe UI", "Inter", "Arial", sans-serif;
+    font-size: 13px;
+}
+
+QWidget:disabled { color: #9CA3AF; }
+
+/* -------------------- Etiquetas -------------------- */
+QLabel {
+    background: transparent;          /* <- transparente como pediste */
+    color: #1E293B;
+    font-weight: 500;
+}
+
+QLabel#secondary {
+    color: #6B7280;
+    font-weight: 400;
+}
+
+/* -------------------- GroupBox / Tarjetas -------------------- */
+QGroupBox {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 16px;
+}
+
+QGroupBox::title {
+    padding: 0 6px;
+    margin-left: 8px;
+    color: #0F172A;
+    font-weight: 600;
+}
+
+/* Acento lateral opcional: envolvé el contenido en un QWidget con objectName="card" */
+QWidget#card {
+    border-left: 3px solid #2563EB;
+    padding-left: 10px;
+}
+
+/* -------------------- Inputs -------------------- */
+/* Bordes de 2px transparentes para que el foco no mueva el layout */
+QLineEdit,
+QComboBox,
+QSpinBox,
+QDateEdit,
+QTimeEdit,
+QPlainTextEdit,
+QTextEdit {
+    background-color: #FFFFFF;
+    border: 2px solid transparent;   /* base transparente */
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+QLineEdit:hover,
+QComboBox:hover,
+QSpinBox:hover,
+QDateEdit:hover,
+QTimeEdit:hover,
+QPlainTextEdit:hover,
+QTextEdit:hover {
+    border-color: #D1D5DB;           /* hover sutil */
+}
+
+QLineEdit:focus,
+QComboBox:focus,
+QSpinBox:focus,
+QDateEdit:focus,
+QTimeEdit:focus,
+QPlainTextEdit:focus,
+QTextEdit:focus {
+    border-color: #2563EB;           /* foco azul */
+}
+
+QLineEdit[readOnly="true"],
+QPlainTextEdit[readOnly="true"],
+QTextEdit[readOnly="true"] {
+    background-color: #F3F4F6;
+    color: #6B7280;
+    border-color: #E5E7EB;
+}
+
+/* Popup del combo (básico y compatible) */
+QComboBox { padding-right: 10px; }
+QComboBox QAbstractItemView {
+    background: #FFFFFF;
+    color: #1E293B;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+/* -------------------- Botones -------------------- */
+QPushButton {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    border: 1px solid #2563EB;
+    border-radius: 10px;
+    padding: 9px 16px;
+    font-weight: 600;
+    min-height: 34px;
+}
+
+QPushButton:hover {
+    background-color: #1D4ED8;
+    border-color: #1D4ED8;
+}
+
+QPushButton:pressed {
+    background-color: #1E40AF;
+    border-color: #1E40AF;
+}
+
+QPushButton:disabled {
+    background-color: #A5B4FC;
+    border-color: #A5B4FC;
+    color: #E5E7EB;
+}
+
+/* Outline */
+QPushButton#outline {
+    background: transparent;
+    color: #2563EB;
+    border: 2px solid #2563EB;
+}
+QPushButton#outline:hover { background: #EFF6FF; }
+QPushButton#outline:pressed { background: #DBEAFE; }
+
+/* Danger */
+QPushButton#danger {
+    background-color: #DC2626;
+    color: #FFFFFF;
+    border: 1px solid #DC2626;
+}
+QPushButton#danger:hover {
+    background-color: #B91C1C;
+    border-color: #B91C1C;
+}
+QPushButton#danger:pressed {
+    background-color: #991B1B;
+    border-color: #991B1B;
+}
+
+/* -------------------- Tooltips -------------------- */
+QToolTip {
+    background-color: #0F172A;
+    color: #F8FAFC;
+    border: 1px solid #334155;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* -------------------- Scrollbars (básicas) -------------------- */
+QScrollBar:vertical {
+    background: transparent;
+    width: 12px;
+    margin: 4px 2px;
+}
+QScrollBar::handle:vertical {
+    background: #CBD5E1;
+    min-height: 32px;
+    border-radius: 6px;
+}
+QScrollBar::handle:vertical:hover { background: #94A3B8; }
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0; border: none; background: transparent;
+}
+
+QScrollBar:horizontal {
+    background: transparent;
+    height: 12px;
+    margin: 2px 4px;
+}
+QScrollBar::handle:horizontal {
+    background: #CBD5E1;
+    min-width: 32px;
+    border-radius: 6px;
+}
+QScrollBar::handle:horizontal:hover { background: #94A3B8; }
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0; border: none; background: transparent;
+}
+
+/* -------------------- Menú / Menubar (opcional) -------------------- */
+QMenuBar {
+    background: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
+}
+QMenuBar::item { padding: 6px 10px; background: transparent; }
+QMenuBar::item:selected { background: #EEF2FF; border-radius: 6px; }
+
+QMenu {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 6px 4px;
+}
+QMenu::item {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #1E293B;
+}
+QMenu::item:selected {
+    background: #EEF2FF;
+    color: #0F172A;
+}
+
